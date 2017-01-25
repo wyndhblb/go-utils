@@ -4,10 +4,8 @@
 Ideally you'd clone the usual ...
 
 
-    go get github.com/wyndhblb/goutils
+    go get github.com/wyndhblb/go-utils/{thing-you-want}
    
-
-Due to some vendor dependencies, then simply import what you wish.
 
 All of these things are really too simple to matter, but they are here so i don't constantly have to repeat myself.
 
