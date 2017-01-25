@@ -1,4 +1,4 @@
-# goutils
+# go-utils
 
 
 Ideally you'd clone the usual ...
