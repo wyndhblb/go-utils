@@ -51,3 +51,48 @@ farms (this is not zookeeper, it's internal, but lets one set a submodule's stat
 ## sorts
 
 The fact that `sort.Sort` cannot natively sort the basic types is, well, ..., so the basic u/int64->8 have sorts.
+
+## parsetime
+
+Parse strings that golang cannot parse into times and durations
+
+    
+    // ParseTime -- string to time
+    //
+    // 2006-01-02T15:04:05Z07:00 (RFC3339)
+    // 2006-01-02 15:04:05
+    // 2006-01-02
+    // 2006-01-02 15:04
+    // 2006-01-02 15
+    // Mon Jan 2 15:04:05 -0700 MST 2006
+    //
+    // now
+    // today
+    // yesterday
+    // lastweek
+    //
+    // and "durations from the epoch"
+    //
+    // 1s, 1sec
+    // 1m, 1min
+    // 1d, 1day
+    // 1mon, 1month
+    // 1y, 1year
+    //
+    // finally attempt to parse an epoch time
+    //
+    // 1485984333
+    // 1485984333.123
+    // 1485984333.123123
+    // 1485984333.123123123
+    
+
+    // ParseDuration  -- string to a duration
+    // strings can be of the form
+    // now -> nil
+    // 1s, 1sec, 1second
+    // 1m, 1min
+    // 1h, 1hour
+    // 1d, 1day
+    // 1mon, 1month
+    // 1y, 1year
