@@ -69,8 +69,6 @@ func Test_ParseTime(t *testing.T) {
 
 	for str, rtime := range intT {
 		t.Logf("Check Format: %s", str)
-
-		// this one is a little harder as "now" changes it can fail if things are real slow
 		p, err := ParseTime(str)
 		if rtime.UnixNano() != p.UnixNano() || err != nil {
 			t.Fatalf("Failed Number: %s ||| Should: %d == got: %d  (error: %v)", str, rtime.UnixNano(), p.UnixNano(), err)
