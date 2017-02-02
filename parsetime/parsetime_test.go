@@ -100,8 +100,6 @@ func Test_ParseDuration(t *testing.T) {
 
 	for str, dur := range auxT {
 		t.Logf("Check Format: %s", str)
-
-		// this one is a little harder as "now" changes it can fail if things are real slow
 		p, err := ParseDuration(str)
 		if p != dur {
 			t.Fatalf("Failed %s Match %s", str, err)
